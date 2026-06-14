@@ -3,7 +3,7 @@ import {useState} from 'react'
 import BookForm from "./components/BookForm";
 import BookList from "./components/BookList"
 
-import { initialBooks } from "/home/ilyestxc/Projects/React-Learning/library-project/src/data/books.js"
+import { initialBooks } from "./data/books.js"
 
 
 const App = () => {
