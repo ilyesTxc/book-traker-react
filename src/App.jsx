@@ -30,8 +30,6 @@ const App = () => {
         );
 
     }
-
-
     function handleDelete(bookId){
         setBooks(books.filter(book =>{
             return book.id !== bookId;
@@ -44,9 +42,7 @@ const App = () => {
       <BookList
         books={books}
         onDelete={handleDelete} 
-      >
-
-      </BookList>
+      />
     </main>
   )
 };

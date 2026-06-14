@@ -8,12 +8,21 @@ const BookForm = ({ onAdd }) => {
   function handleSubmit(e) {
     e.preventDefault();
 
-    onAdd({
+    if(!title.trim() || !author.trim()){
+        alert("Please fill in both the title and the author.");
+        return;
+    }
+
+    const added = onAdd({
       id: crypto.randomUUID(),
       title: title.trim(),
       author: author.trim(),
       status,
     });
+
+    if(!added){
+        return;
+    }
 
     setTitle("");
     setAuthor("");
@@ -34,7 +43,7 @@ const BookForm = ({ onAdd }) => {
             Book title
           </label>
 
-          <input
+          <input required
           id="title"
           type="text"
           placeholder="Enter the book title"
@@ -53,7 +62,7 @@ const BookForm = ({ onAdd }) => {
           Author
         </label>
 
-        <input
+        <input required
           id="author"
           type="text"
           placeholder="Enter the author's name"
